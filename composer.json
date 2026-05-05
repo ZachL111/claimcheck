@@ -1,0 +1,10 @@
+{
+  "name": "zachl111/claimcheck",
+  "description": "Validate OIDC-style claim, nonce, and redirect policy fixtures.",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Portfolio\\": "src/"
+    }
+  }
+}
