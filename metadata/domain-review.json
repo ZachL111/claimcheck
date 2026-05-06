@@ -1,0 +1,73 @@
+{
+  "repo": "claimcheck",
+  "language": "PHP",
+  "category": "Security tooling",
+  "goal": "Validate OIDC-style claim, nonce, and redirect policy fixtures.",
+  "review_model": {
+    "terms": [
+      "trust boundary",
+      "claim drift",
+      "replay exposure",
+      "policy width"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "trust boundary",
+      "signal": 47,
+      "slack": 41,
+      "drag": 8,
+      "confidence": 67,
+      "score": 178,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "claim drift",
+      "signal": 49,
+      "slack": 21,
+      "drag": 28,
+      "confidence": 75,
+      "score": 110,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "replay exposure",
+      "signal": 82,
+      "slack": 46,
+      "drag": 15,
+      "confidence": 77,
+      "score": 242,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "policy width",
+      "signal": 84,
+      "slack": 41,
+      "drag": 29,
+      "confidence": 65,
+      "score": 187,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "trust boundary",
+      "signal": 66,
+      "slack": 38,
+      "drag": 14,
+      "confidence": 87,
+      "score": 215,
+      "lane": "ship"
+    }
+  ]
+}

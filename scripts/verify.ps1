@@ -59,3 +59,7 @@ foreach ($pathPattern in $knownPaths) {
 }
 
 php tests/test_policy.php
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-claimcheck-detail.ps1
+
+php tests/test_domain_review.php
